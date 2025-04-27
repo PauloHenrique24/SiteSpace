@@ -2,18 +2,18 @@
     <div>
         <div class="menu-container">
             <ul class="menu-content-left">
-                <li><a href=""> Jogos </a></li>
-                <li><a href="#sobre"> Sobre nós </a></li>
-                <li><a href=""> O Estudio </a></li>
-                <li><a href=""> Contato </a></li>
+                <li class="btn-menu"><a href=""> Jogos </a></li>
+                <li class="btn-menu"><a href="#sobre"> Sobre nós </a></li>
+                <li class="btn-menu"><a href=""> O Estudio </a></li>
+                <li class="btn-menu"><a href=""> Contato </a></li>
             </ul>
             
             <img src="../assets/img/icone.png" alt="Icone do Space Studios" onclick="location.href='#home'">
 
             <ul class="menu-content-right">
-                <li><a href=""> News </a></li>
-                <li><a href=""> Cursos </a></li>
-                <li><a href=""> Nossas Redes </a></li>
+                <li class="btn-menu"><a href=""> News </a></li>
+                <li class="btn-menu"><a href=""> Cursos </a></li>
+                <li class="btn-menu"><a href=""> Nossas Redes </a></li>
                 <li class="sign"><a href=""> Sign Up </a></li>
             </ul>
         </div>
@@ -40,12 +40,14 @@
         display: flex;
         align-items: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 20px 0;
         position: fixed;
         top: 0;
         transition: all 0.8s ease;
         opacity: 0;
         transform: translateY(-100px);
+
+        z-index: 100;
     }
 
     .menu-container.loaded {
@@ -63,40 +65,35 @@
     }
 
     .menu-container img:hover {
-        width: 170px;
-        transform: translate(-50%) scale(1.1);
+        width: 150px;
     }
 
-    .menu-container ul li {
+    .menu-container .btn-menu, .sign {
         display: inline;
         padding: 10px 5px;
     }
 
-    .menu-container ul li a {
+    .menu-container .btn-menu a, .sign a {
         color: #ccc;
         text-decoration: none;
         text-transform: capitalize;
         padding: .8rem 1rem;
         border-radius: 40px;
-        transition: all 0.2s ease, background-size 0.4s ease;
-        background-image: linear-gradient(45deg, #2A4561, #277EDB);
-        background-size: 100% 0%;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: inline-block;
+
+        transition: all .5s;
     }
 
-    .menu-container ul li a:hover {
+    .menu-container .btn-menu a:hover {
         color: white;
-        background-size: 100% 100%;
+        background-color: #277EDB;
         box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.5);
         transform: scale(1.1) rotate(1deg);
     }
 
     .menu-container.scrolled {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.9);
         backdrop-filter: blur(5px);
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid #ccc;
     }
 
     .menu-content-left,
@@ -105,6 +102,20 @@
         width: 50%;
         justify-content: center;
         align-items: center;
+    }
+
+    .sign a{
+        color: #fff;
+        background-color: #277EDB;
+        border-radius: 10px;
+        font-size: 1.1rem;
+
+        margin-left: 10px;
+    }
+
+    .sign a:hover{
+        color: #277EDB;
+        background-color: #fff;
     }
 
 

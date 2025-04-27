@@ -6,19 +6,61 @@
             </video>
         </div>
         <div class="home-container">
-            <p class="p1">The future of</p>
-            <p class="p2">gaming</p>
-            <p class="p3">is now</p>
+            <p class="p1" ref="text1"></p>
+            <p class="p2" ref="text2"></p>
+            <p class="p3" ref="text3"></p>
         </div>
     </div>
 </template>
 <script>
 export default {
-    
+    mounted() {
+    const texts = [
+      "The future of",
+      "gaming",
+      "is now"
+    ];
+
+    const refs = [
+      this.$refs.text1,
+      this.$refs.text2,
+      this.$refs.text3
+    ];
+
+    let currentText = 0;
+    let currentChar = 0;
+
+    const typeWriter = () => {
+      if (currentText < texts.length) {
+        let currentRef = refs[currentText];
+
+        if (currentChar === 0) {
+          currentRef.innerHTML = ""; // limpa certinho
+        }
+
+        let char = texts[currentText][currentChar];
+        if (char === " ") {
+          char = "&nbsp;"; // espaço visível
+        }
+        currentRef.innerHTML += char;
+        currentChar++;
+
+        if (currentChar < texts[currentText].length) {
+          setTimeout(typeWriter, 100); // velocidade da letra
+        } else {
+          currentText++;
+          currentChar = 0;
+          setTimeout(typeWriter, 400); // pausa entre os textos
+        }
+      }
+    };
+
+    typeWriter();
+  }
 }
 </script>
 <style scoped>
-    .video-background{
+    .video-background {
         position: fixed;
         top: 0;
         left: 0;
@@ -26,51 +68,41 @@ export default {
         height: 100%;
         overflow: hidden;
         z-index: -1;
-
         filter: blur(8px);
     }
 
-    .background{
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-
-        
-    }
-
-    .home-container{
+    .home-container {
         display: flex;
         align-items: center;
         justify-content: center;
-
         flex-direction: column;
-
         font-size: 6rem;
         letter-spacing: 6px;
         line-height: 10rem;
         height: 100vh;
         width: min-content;
-
         margin: auto;
-
         font-family: Helvetica;
-
-        & .p1{
-            margin-right: auto;
-            color: #fff;
-        }
-
-        & .p2{
-            font-size: 2.2em;
-            letter-spacing: 10px;
-            color: #2c7ed6;
-
-            font-family: Cal sans;
-        }
-
-        & .p3{
-            margin-left: auto;
-        }
     }
+
+    .p1{
+        margin-right: auto;
+    }
+
+    .p2{
+        font-size: 2.2em;
+        letter-spacing: 10px;
+        color: #2c7ed6;
+        font-family: Cal sans;
+    }
+
+    .p3{
+        margin-left: auto;
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+
 
 </style>

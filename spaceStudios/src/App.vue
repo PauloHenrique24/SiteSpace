@@ -1,7 +1,10 @@
 <script setup>
+
   import Menu from './components/Menu.vue'
   import Home from './components/Home.vue'
   import Sobre from './components/SobreNos.vue'
+  import FooterBar from './components/FooterBar.vue'
+
 </script>
 
 <template>
@@ -13,6 +16,7 @@
     <Menu/>
     <Home id="home"/>
     <Sobre id="sobre"/>
+    <FooterBar/>
   </main>
 </template>
 
