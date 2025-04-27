@@ -7,7 +7,7 @@
         <button>Sign Up for Free</button>
         </div>
         <div class="card-estiloso">
-        <img src="../assets/img/imgSobre.png" alt="Imagem Top" />
+        <img src="/src/assets/img/imgSobre.png" alt="Imagem Top" />
         </div>
     </div>
 </template>

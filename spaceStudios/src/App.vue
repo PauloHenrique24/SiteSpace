@@ -1,9 +1,11 @@
 <script setup>
 
-  import Menu from './components/Menu.vue'
-  import Home from './components/Home.vue'
-  import Sobre from './components/SobreNos.vue'
-  import FooterBar from './components/FooterBar.vue'
+  import Menu from '/src/components/Menu.vue'
+  import Home from '/src/components/HomePage/Home.vue'
+  import Sobre from '/src/components/HomePage/SobreNos.vue'
+  import FooterBar from '/src/components/FooterBar.vue'
+  import OEstudio from '/src/components/HomePage/OEstudio.vue'
+  import Contato from './components/HomePage/Contato.vue'
 
 </script>
 
@@ -14,37 +16,16 @@
 
   <main>
     <Menu/>
+
     <Home id="home"/>
     <Sobre id="sobre"/>
+    <OEstudio id="estudio"/>
+    <Contato id="contato"/>
+    
     <FooterBar/>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>

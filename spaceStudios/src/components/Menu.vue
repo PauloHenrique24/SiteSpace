@@ -2,10 +2,10 @@
     <div>
         <div class="menu-container">
             <ul class="menu-content-left">
-                <li class="btn-menu"><a href=""> Jogos </a></li>
                 <li class="btn-menu"><a href="#sobre"> Sobre nós </a></li>
-                <li class="btn-menu"><a href=""> O Estudio </a></li>
-                <li class="btn-menu"><a href=""> Contato </a></li>
+                <li class="btn-menu"><a href="#estudio"> O Estudio </a></li>
+                <li class="btn-menu"><a href="#contato"> Contato </a></li>
+                <li class="btn-menu"><a href=""> Jogos </a></li>
             </ul>
             
             <img src="../assets/img/icone.png" alt="Icone do Space Studios" onclick="location.href='#home'">

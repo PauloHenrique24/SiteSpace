@@ -2,7 +2,7 @@
     <div>
         <div class="video-background">
             <video autoplay muted loop playsinline>
-                <source src="../assets/img/background-home.mp4" type="video/mp4">
+                <source src="/src/assets/videos/background-home.mp4" type="video/mp4">
             </video>
         </div>
         <div class="home-container">
