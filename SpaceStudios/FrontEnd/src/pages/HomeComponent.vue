@@ -1,11 +1,11 @@
 <script setup>
 
-  import Menu from '/src/components/Menu.vue'
-  import Home from '/src/components/HomePage/Home.vue'
-  import Sobre from '/src/components/HomePage/SobreNos.vue'
-  import FooterBar from '/src/components/FooterBar.vue'
-  import OEstudio from '/src/components/HomePage/OEstudio.vue'
-  import Contato from '/src/components/HomePage/Contato.vue'
+  import Menu from '@/components/Menu.vue'
+  import Home from '@/components/HomePage/Home.vue'
+  import Sobre from '@/components/HomePage/SobreNos.vue'
+  import FooterBar from '@/components/FooterBar.vue'
+  import OEstudio from '@/components/HomePage/OEstudio.vue'
+  import Contato from '@/components/HomePage/Contato.vue'
 
 </script>
 

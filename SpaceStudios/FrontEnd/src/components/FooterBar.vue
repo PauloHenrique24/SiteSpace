@@ -3,7 +3,7 @@
         <h2 class="title">Já deu uma olhada em nossos cursos?</h2>
         <p class="subtitle">Temos alguns cursos gratuitos para voce engajar no ramo da programacao</p>
 
-        <button class="btn">Ver Cursos</button>
+        <button class="btn" @click="Cursos()">Ver Cursos</button>
 
         <hr>
 
@@ -15,29 +15,28 @@
 
             <div class="espaco-linhas">
                 <h3>Informacões</h3>
-                <p><a href="">Contato</a></p>
-                <p><a href="">O Estudio</a></p>
-                <p><a href="">Sobre Nós</a></p>
-                <p><a href="">News</a></p>
+                <p><a href="/#estudio">O Estudio</a></p>
+                <p><a href="/#sobre">Sobre Nós</a></p>
+                <p><a href="/news">News</a></p>
             </div>
 
             <div class="espaco-linhas">
                 <h3>Diversão e Aprendizado</h3>
-                <p><a href="">Jogos</a></p>
-                <p><a href="">Cursos</a></p>
-                <p><a href="">Login</a></p>
+                <p><a href="/jogos">Jogos</a></p>
+                <p><a href="/cursos">Cursos</a></p>
+                <p><a href="/login">Login</a></p>
             </div>
 
             <div class="espaco-linhas">
                 <h3>Contato</h3>
-                <p><a href="">Contato</a></p>
-                <p><a href="">Nossas Redes</a></p>
+                <p><a href="/#contato">Contato</a></p>
+                <p><a href="/#contato">Nossas Redes</a></p>
                 
             </div>
 
             <div class="redes">
                 <h3>Nossas Redes Sociais</h3>
-                <button class="btn">Redes Sociais</button>
+                <button class="btn" @click="Redes()">Redes Sociais</button>
             </div>
         </div>
 
@@ -54,6 +53,14 @@ export default {
     data() {
         return {
             currentYear: new Date().getFullYear()
+        }
+    },
+    methods:{
+        Redes(){
+            window.location = "/#contato";
+        },
+        Cursos(){
+            window.location = "/cursos";
         }
     }
 }

@@ -2,18 +2,18 @@
     <div>
         <div class="menu-container">
             <ul class="menu-content-left">
-                <li class="btn-menu"><a href="#sobre"> Sobre nós </a></li>
-                <li class="btn-menu"><a href="#estudio"> O Estudio </a></li>
-                <li class="btn-menu"><a href="#contato"> Contato </a></li>
-                <li class="btn-menu"><a href=""> Jogos </a></li>
+                <li class="btn-menu"><a href="/#sobre"> Sobre nós </a></li>
+                <li class="btn-menu"><a href="/#estudio"> O Estudio </a></li>
+                <li class="btn-menu"><a href="/#contato"> Contato </a></li>
             </ul>
             
-            <img src="../assets/img/icone.png" alt="Icone do Space Studios" onclick="location.href='#home'">
+            <img src="../assets/img/icone.png" alt="Icone do Space Studios" onclick="location.href='/#home'">
 
             <ul class="menu-content-right">
-                <li class="btn-menu"><a href=""> News </a></li>
-                <li class="btn-menu"><a href=""> Cursos </a></li>
-                <li class="btn-menu"><a href=""> Nossas Redes </a></li>
+                <li class="btn-menu"><a href="/news"> News </a></li>
+                <li class="btn-menu"><a href="/cursos"> Cursos </a></li>
+                <li class="btn-menu"><a href="/jogos"> Jogos </a></li>
+
                 <li class="sign"><a href="/login"> Sign Up </a></li>
             </ul>
         </div>
@@ -22,7 +22,7 @@
 <script>
     window.addEventListener('scroll', () => {
         const bar = document.querySelector('.menu-container');
-        if (window.scrollY > 50) {
+        if (window.scrollY > 20) {
         bar.classList.add('scrolled');
         } else {
         bar.classList.remove('scrolled');

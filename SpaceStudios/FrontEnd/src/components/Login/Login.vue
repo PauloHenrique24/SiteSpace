@@ -4,7 +4,7 @@
         <div class="content">
             <h2 class="title">Sign In</h2>
             <form class="form">
-                <input type="text" placeholder="username or email">
+                <input type="text" placeholder="email">
                 <input type="password" placeholder="password">
 
                 <button type="submit">Sign In</button>
