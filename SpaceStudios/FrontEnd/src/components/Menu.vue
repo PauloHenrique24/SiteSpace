@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app">
         <div class="menu-container">
             <ul class="menu-content-left">
                 <li class="btn-menu"><a href="/#sobre"> Sobre nós </a></li>
@@ -36,18 +36,27 @@
 
 </script>
 <style scoped>
+    .app{
+        position: sticky;
+        top: 0;
+
+        z-index: 8000;
+    }
+
     .menu-container {
         display: flex;
         align-items: center;
         width: 100%;
         padding: 20px 0;
-        position: fixed;
-        top: 0;
+
         transition: all 0.8s ease;
         opacity: 0;
         transform: translateY(-100px);
 
         z-index: 100;
+
+        font-family: Quicksand, sans-serif;
+        
     }
 
     .menu-container.loaded {
@@ -81,6 +90,8 @@
         border-radius: 40px;
 
         transition: all .5s;
+
+        font-weight: 700;
     }
 
     .menu-container .btn-menu a:hover {

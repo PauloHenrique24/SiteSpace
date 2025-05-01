@@ -20,9 +20,10 @@ export default {
         return{
             news: [
                 {title: 'Novo Patch', describe: 'Nova atualizacão do Jogo Terrius, disponivel na Play Store', data: new Date()},
+                {title: 'Terrius Recebe nova atualizacao', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
                 {title: 'Terrius Disponivel na Play Store', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
                 {title: 'Terrius Disponivel na Play Store', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
-                {title: 'Terrius Disponivel na Play Store', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
+                {title: 'Jogo novo é anunciado', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
             ]
         }
     }
@@ -41,8 +42,6 @@ export default {
 
         background-color: #fff;
         color: #000;
-
-        margin-top: 90px;
 
         & .title{
             font-size: 2.6rem;

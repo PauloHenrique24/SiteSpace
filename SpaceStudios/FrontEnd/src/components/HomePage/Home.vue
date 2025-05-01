@@ -79,10 +79,10 @@ export default {
         font-size: 6rem;
         letter-spacing: 6px;
         line-height: 10rem;
-        height: 100vh;
+        height: calc(100vh - 80px);
         width: min-content;
         margin: auto;
-        font-family: Helvetica;
+        font-family: Montserrat;
     }
 
     .p1{

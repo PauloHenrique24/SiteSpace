@@ -58,6 +58,16 @@ export default {
   border-radius: 30px;
   position: relative;
   z-index: 2;
+
+  cursor: pointer;
+
+  transition: all .5s;
+}
+
+.card-estiloso img:hover{
+  transform: scale(1.01);
+  filter: drop-shadow(-1px 1px 2px rgba(0,0,0,.3));
+  opacity: .9;
 }
 
 /* Estilização dos textos */
@@ -80,6 +90,8 @@ export default {
   color: #555;
   margin: 0 5px;
   line-height: 30px;
+
+  font-family: Montserrat;
 }
 
 .card button {
@@ -90,10 +102,12 @@ export default {
   margin: 20px 0;
   border-radius: 2px;
   color: white;
-  font-weight: 900;
   box-shadow: -1px 1px 2px 1px rgba(0,0,0,.4);
   cursor: pointer;
   transition: all .5s;
+  
+  font-weight: 700;
+  font-family: Quicksand;
 }
 
 .card button:hover {

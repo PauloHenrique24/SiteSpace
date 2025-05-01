@@ -1,6 +1,6 @@
 <template>
     <div class="escopo">
-        <h2 class="title">Nosso Estudio</h2>
+        <h2 class="title">O Estudio</h2>
         <div class="estudio">
         <div class="quemSomos">
             <h4>Quem Somos</h4>
@@ -22,19 +22,19 @@
                 </div>
                 <div class="container">
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeCreatividade.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeCreatividade.png" alt=""></div>
                         <p>Criatividade</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeIdeia.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeIdeia.png" alt=""></div>
                         <p>Inovacão</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeDiversao.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeDiversao.png" alt=""></div>
                         <p>Diversão</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeEnsino.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeEnsino.png" alt=""></div>
                         <p>Ensino</p>
                     </div>
                 </div>
@@ -46,19 +46,19 @@
                 </div>
                 <div class="container">
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeHistoria.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeHistoria.png" alt=""></div>
                         <p>StoryBoard</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeDesenvolvimento.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeDesenvolvimento.png" alt=""></div>
                         <p>Desenvolvimento</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeTeste.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeTeste.png" alt=""></div>
                         <p>Teste</p>
                     </div>
                     <div class="content">
-                        <img src="/src/assets/img/Icones/iconeEnviado.png" alt="">
+                        <div class="icone_"><img src="/src/assets/img/Icones/iconeEnviado.png" alt=""></div>
                         <p>Publicar</p>
                     </div>
                 </div>
@@ -81,15 +81,13 @@ export default {
         color: #ccc;
         padding: 30px;
 
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Montserrat, sans-serif;
     }
 
     .title{
+        color: #fff;
 
-        background-color: #000;
-        font-size: 1.6rem;
-        
-        border-radius: 10px;
+        font-size: 3.5rem;
 
         display: inline-block;
 
@@ -99,9 +97,7 @@ export default {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-
-        box-shadow: -1px 1px 3px 1px rgba(0,0,0,.3);
-        color: #fff;
+        
     }
 
     .estudio{
@@ -119,9 +115,12 @@ export default {
         flex:.5;
 
         & h4{
-            color: #eee;
+            color: #b8b8b8;
             text-transform: uppercase;
             letter-spacing: 3px;
+            margin: 8px 2px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         & h2{
@@ -130,13 +129,15 @@ export default {
             letter-spacing: -1px;
             font-size: 1.8rem;
             line-height: 37px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         & p{
             color: #ccc;
             margin: 0 5px;
             line-height: 30px;
+
         }
     }
 
@@ -156,12 +157,34 @@ export default {
                 flex-direction: column;
                 gap: 10px;
 
-                & img{
+                & .icone_{
                     width: 90px;
-                    background-color: rgba(255,255,255,0.2);
+                    height: 90px;
+                    background-color: #fff;
                     border: 2px solid #fff;
-                    border-radius: 4px;
+                    border-radius: 50px;
                     padding: 10px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    transition: all .5s ease-in-out;
+                    cursor: pointer;
+
+                    box-shadow: -4px 4px 6px rgba(0,0,0,.9);
+                    
+
+                    & img{
+                        width: 60px;
+                    }
+                }
+
+                & .icone_:hover{
+                    transform: scale(1.15) rotateY(180deg);
+                    background-color: #111;
+                    border: 2px solid #444;
+                    opacity: .8;
                 }
 
                 & p{
