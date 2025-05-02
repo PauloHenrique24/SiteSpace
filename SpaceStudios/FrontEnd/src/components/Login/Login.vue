@@ -3,9 +3,9 @@
         <div class="bg"></div>
         <div class="content">
             <h2 class="title">Sign In</h2>
-            <form class="form">
-                <input type="text" placeholder="email">
-                <input type="password" placeholder="password">
+            <form @submit.prevent="handleSubmit" class="form">
+                <input type="text" placeholder="email" name="email">
+                <input type="password" placeholder="password" name="password">
 
                 <button type="submit">Sign In</button>
             </form>
@@ -27,9 +27,49 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+
 export default {
-    
-}
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    async handleSubmit() {
+      try {
+        // Primeiro, faz o login
+        axios.post('http://localhost:8000/api/admin/login', {
+        email: this.email,
+        password: this.password
+        })
+        .then(response => {
+        const token = response.data.token;  // Supondo que o token seja retornado assim
+
+        // Agora você pode usar esse token para fazer requisições autenticadas
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+        // Fazer a requisição autenticada
+        axios.get('http://localhost:8000/api/admin/dashboard')
+            .then(dashboardResponse => {
+            console.log(dashboardResponse.data);
+            })
+            .catch(error => {
+            console.error(error);
+            });
+        })
+        .catch(error => {
+        console.error('Login failed:', error);
+        });
+      } catch (error) {
+        console.error('Login error:', error);
+        alert('An error occurred. Please try again later.');
+      }
+    },
+  },
+};
 </script>
 <style scoped>
     .container{
