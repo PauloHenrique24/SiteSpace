@@ -2,16 +2,33 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/pages/HomeComponent.vue'
 import Jogos from '@/components/pages/JogosComponent.vue'
 import News from '@/components/pages/NewsComponent.vue'
+import Login from '@/components/pages/LoginComponent.vue'
+import Dashboard from '@/components/pages/DashBoardView.vue'
+
+import routesJs from '@/router/routes.js';
+
+
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/jogos', component: Jogos},
-  { path: '/news', component: News},
+  { path: '/', name:'home', component: Home },
+  { path: '/jogos', name: 'jogos', component: Jogos},
+  { path: '/news', name: 'news', component: News},
+  { path: '/login', name: 'login', component: Login},
+  { path: '/dashboard',
+    component: Dashboard,
+    name: 'Dashboard',
+    meta: {
+      auth: true
+    }
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+
+router.beforeEach(routesJs)
 
 export default router

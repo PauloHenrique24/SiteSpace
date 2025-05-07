@@ -15,19 +15,28 @@
             <ul class="menu-content-right" :class="{ 'active': isMenuOpen }">
                 <li class="btnhome" :class="{ 'active': isMenuOpen }" @click="closeMenu"><a href="/"> Home </a></li>
                 <li class="btn-menu" @click="closeMenu"><a href="/news"> News </a></li>
-                <li class="btn-menu" @click="closeMenu"><a href="#"> Em Breve </a></li>
+                <li class="btn-menu" @click="closeMenu"><a href=""> Em Breve </a></li>
+                <li v-if="auth.isAuthenticated && auth.isAdmin" class="btn-menu" @click="closeMenu"><a href="/dashboard"> DashBoard </a></li>
                 <li class="btn-menu" @click="closeMenu"><a href="/jogos"> Jogos </a></li>
-                <li class="sign" @click="closeMenu"><a href="#"> Em Breve </a></li>
+                <li v-if="auth.isAuthenticated">Usúario Logado:<p v-if="auth.isAdmin"> Administrador</p> {{ auth.fullName }}</li>
+                <li v-if="!auth.isAuthenticated" class="sign" @click="closeMenu"><a href="/login"> Login </a></li>
+                <li v-else class="sign" @click="logout"><a href=""> Logout </a></li>
+
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+import {useAuth} from '@/stores/auth.js';
+import {useRouter} from 'vue-router';
+
 export default {
     data() {
         return {
-            isMenuOpen: false
+            isMenuOpen: false,
+            auth: useAuth(),
+            router: useRouter(),
         };
     },
     methods: {
@@ -51,6 +60,10 @@ export default {
             } else {
                 bar.classList.remove('scrolled');
             }
+        },
+        logout() {
+            this.auth.clear();
+            this.router.push({name: 'login'});
         }
     },
     mounted() {

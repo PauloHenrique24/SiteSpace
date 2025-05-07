@@ -1,75 +1,60 @@
 <template>
-    <div class="container">
+    <template v-if="!auth.isAuthenticated">
+        <div class="container">
         <div class="bg"></div>
-        <div class="content">
-            <h2 class="title">Sign In</h2>
-            <form @submit.prevent="handleSubmit" class="form">
-                <input type="text" placeholder="email" name="email">
-                <input type="password" placeholder="password" name="password">
+            <div class="content">
+                <h2 class="title">Sign In</h2>
+                <form @submit.prevent="login" class="form">
+                    <input type="text" placeholder="email" name="email" v-model="user.email">
+                    <input type="password" placeholder="password" name="password" v-model="user.password">
 
-                <button type="submit">Sign In</button>
-            </form>
+                    <button type="submit">Sign In</button>
+                </form>
 
-            <p class="loginWith">Or login with</p>
+                <p class="loginWith">Or login with</p>
 
-            <div class="orLogin">
-                <img src="../../assets/img/Icones/facebook.png" alt="Facebook">
-                <img src="../../assets/img/Icones/google.png" alt="Google">
-            </div>
+                <div class="orLogin">
+                    <img src="../../assets/img/Icones/facebook.png" alt="Facebook">
+                    <img src="../../assets/img/Icones/google.png" alt="Google">
+                </div>
 
-            <p class="voltar"><a href="/">Home</a></p>
+                <p class="voltar"><a href="/">Home</a></p>
 
-            <div class="login">
-                <p class="signUp"><a href="/register">Register</a></p>
-                <p class="signUp"><a href="">Sign Up</a></p>
+                <div class="login">
+                    <p class="signUp"><a href="/register">Register</a></p>
+                    <p class="signUp"><a href="/dashboard">Sign Up</a></p>
+                </div>
             </div>
         </div>
-    </div>
+    </template>
 </template>
-<script>
-import axios from 'axios';
-import { useRouter } from 'vue-router';
+<script setup>
+    import http from '@/services/http.js';
+    import {reactive} from 'vue';
+    import {useAuth} from '@/stores/auth.js';
 
-export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-    };
-  },
-  methods: {
-    async handleSubmit() {
-      try {
-        // Primeiro, faz o login
-        axios.post('http://localhost:8000/api/admin/login', {
-        email: this.email,
-        password: this.password
-        })
-        .then(response => {
-        const token = response.data.token;  // Supondo que o token seja retornado assim
+    const auth = useAuth();
 
-        // Agora você pode usar esse token para fazer requisições autenticadas
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    const user = reactive({
+        email: '',
+        password: ''
+    })
 
-        // Fazer a requisição autenticada
-        axios.get('http://localhost:8000/api/admin/dashboard')
-            .then(dashboardResponse => {
-            console.log(dashboardResponse.data);
-            })
-            .catch(error => {
-            console.error(error);
-            });
-        })
-        .catch(error => {
-        console.error('Login failed:', error);
-        });
-      } catch (error) {
-        console.error('Login error:', error);
-        alert('An error occurred. Please try again later.');
-      }
-    },
-  },
-};
+    async function login(){
+        try {
+            const {data} = await http.post('/auth',user);
+            
+            auth.setToken(data.token);
+            auth.setUser(data.user);
+
+            console.log(data);
+
+            window.location = '/';
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    
 </script>
 <style scoped>
     .container{
