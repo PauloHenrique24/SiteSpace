@@ -19,11 +19,29 @@ export default {
     data(){
         return{
             news: [
-                {title: 'Novo Patch', describe: 'Nova atualizacão do Jogo Terrius, disponivel na Play Store', data: new Date()},
-                {title: 'Terrius Recebe nova atualizacao', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
-                {title: 'Terrius Disponivel na Play Store', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
-                {title: 'Terrius Disponivel na Play Store', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
-                {title: 'Jogo novo é anunciado', describe: 'Jogue agora mesmo a beta do jogo Terrius somente na play Store', data: new Date()},
+                {title: '🎉 A SPACE STUDIOS ESTÁ DE VOLTA! 🚀🎮', 
+                describe: `Depois de um tempo afastados, voltamos com tudo para o mundo dos games!
+
+                    Durante esse período, a equipe:
+                    🔍 Estudou sobre desenvolvimento de jogos
+                    📊 Analisou as principais tendências do mercado
+                    💡 Criou ideias novas e criativas
+
+                    Tudo isso pra trazer experiências ainda mais imersivas e incríveis pra você! ✨🎯
+
+                    🗣️ “Passamos esse tempo estudando sobre jogos, analisando tendências e criando ideias novas. Logo, logo traremos novidades que vão surpreender.” — Equipe SPACE STUDIOS 👾🔥
+
+                    Fiquem ligados! Vem coisa grande por aí. 💥`, 
+                data: '2 de maio de 2025'},
+                {title: '🚀 Space Studios lança jogos rápidos e divertidos na Itch.io! 🎮', describe: `A desenvolvedora indie Space Studios acaba de colocar no ar seus jogos leves e acessíveis na plataforma Itch.io! Entre os destaques estão:
+
+                🌌 Space Smash – Uma corrida espacial com mecânica simples e viciante.
+
+                🍰 Dessert Duo – Um cooperativo de culinária perfeito pra jogar com um amigo.
+
+                Perfeitos pra quem quer diversão rápida e sem compromisso, os jogos estão disponíveis pra jogar direto no navegador ou baixar de graça! 🕹️✨
+
+                👉 Corre lá na Itch.io e confere!`, data: '2 de maio de 2025'},
             ]
         }
     }
@@ -98,5 +116,18 @@ export default {
     .card-news:hover{
         opacity: .9;
         transform: scale(1.005);
+    }
+
+    /* Media Queries para dispositivos móveis */
+    @media (max-width: 768px) {
+        .container{
+            height: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container{
+            height: auto;
+        }
     }
 </style>

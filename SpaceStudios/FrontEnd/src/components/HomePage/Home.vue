@@ -2,7 +2,7 @@
     <div>
         <div class="video-background">
             <video autoplay muted loop playsinline>
-                <source src="/src/assets/videos/bg4.mp4" type="video/mp4">
+                <source src="/src/assets/videos/bg1.mp4" type="video/mp4">
             </video>
         </div>
         <div class="home-container">
@@ -85,18 +85,18 @@ export default {
         font-family: Montserrat;
     }
 
-    .p1{
+    .p1 {
         margin-right: auto;
     }
 
-    .p2{
+    .p2 {
         font-size: 2.2em;
         letter-spacing: 10px;
         color: white;
-        font-family: Cal sans;
+        font-family: 'Cal Sans';
     }
 
-    .p3{
+    .p3 {
         margin-left: auto;
     }
 
@@ -104,5 +104,36 @@ export default {
         50% { border-color: transparent; }
     }
 
+    /* Media Queries para dispositivos móveis */
+    @media (max-width: 768px) {
+        .home-container {
+            font-size: 4rem; /* Reduz o tamanho da fonte */
+            line-height: 6rem; /* Ajusta a altura da linha */
+        }
 
+        .p2 {
+            font-size: 2em; /* Reduz o tamanho da fonte para p2 */
+            letter-spacing: 5px; /* Ajusta o espaçamento */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .home-container {
+            font-size: 3rem; /* Reduz ainda mais o tamanho da fonte */
+            line-height: 4rem; /* Ajusta a altura da linha */
+        }
+
+        .p1{
+          font-size: 1.8rem;
+        }
+
+        .p2 {
+            font-size: 2em; /* Reduz o tamanho da fonte para p2 */
+            letter-spacing: 3px; /* Ajusta o espaçamento */
+        }
+
+        .p3{
+          font-size: 1.9rem;
+        }
+    }
 </style>

@@ -1,9 +1,10 @@
 <template>
     <div class="foot">
+        <div class="container">
         <h2 class="title">Já deu uma olhada em nossos cursos?</h2>
         <p class="subtitle">Temos alguns cursos gratuitos para voce engajar no ramo da programacao</p>
 
-        <button class="btn" @click="Cursos()">Ver Cursos</button>
+        <button class="btn">Em breve</button>
 
         <hr>
 
@@ -23,8 +24,8 @@
             <div class="espaco-linhas">
                 <h3>Diversão e Aprendizado</h3>
                 <p><a href="/jogos">Jogos</a></p>
-                <p><a href="/cursos">Cursos</a></p>
-                <p><a href="/login">Login</a></p>
+                <!-- <p><a href="/cursos">Cursos</a></p> -->
+                <!-- <p><a href="/login">Login</a></p> -->
             </div>
 
             <div class="espaco-linhas">
@@ -41,6 +42,7 @@
         </div>
 
         <hr>
+        </div>
 
         <div class="site">
             <p>&copy; {{ currentYear }} Space <span>Studios</span></p>
@@ -66,65 +68,60 @@ export default {
 }
 </script>
 <style scoped>
-    .foot{
-        background-image: linear-gradient(to top, #111,#000);
-
+    .foot {
+        background-image: linear-gradient(to top, #111, #000);
         width: 100%;
         height: max-content;
         text-align: center;
-
         padding: 40px 150px;
-
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-    .title{
+    .title {
         color: #fff;
         font-size: 1.6rem;
     }
 
-    .subtitle{
-        color:#eee;
-
+    .subtitle {
+        color: #eee;
         margin: 10px 0 20px;
     }
 
-    hr{
+    hr {
         opacity: .2;
     }
 
-    .espaco-title{
-        & h3{
+    .espaco-title {
+        & h3 {
             font-size: 1.3rem;
         }
 
-        & h2{
+        & h2 {
             font-size: 1.6rem;
             color: #fff;
         }
     }
 
-    .espaco-linhas{
+    .espaco-linhas {
         display: flex;
         flex-direction: column;
         align-items: start;
 
-        & h3{
-            color: #d11f1f;
+        & h3 {
+            color: #2273cf;
             text-transform: capitalize;
             font-size: 1rem;
         }
 
-        & p a{
+        & p a {
             font-size: .8rem;
             color: #fff;
-
             text-decoration: none;
         }
     }
 
-    .redes{
-        & h3{
+    .redes {
+        & h3 {
             font-size: 1.3rem;
             border-bottom: 3px solid #fff;
             color: #fff;
@@ -132,7 +129,7 @@ export default {
     }
 
     .btn {
-        background-color: #d11f1f;
+        background-color: #2273cf;
         border: none;
         height: 50px;
         width: 200px;
@@ -140,7 +137,7 @@ export default {
         border-radius: 2px;
         color: #fff;
         font-weight: 900;
-        box-shadow: -1px 1px 2px 1px rgba(0,0,0,.4);
+        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, .4);
         cursor: pointer;
         transition: all .5s;
     }
@@ -148,28 +145,52 @@ export default {
     .btn:hover {
         border-radius: 5px;
         background-color: #fff;
-        color: #d11f1f;
+        color: #2273cf;
     }
 
-    .espacos{
+    .espacos {
         display: flex;
         align-items: center;
         justify-content: space-around;
-
         margin: 20px;
     }
 
-    .site{
+    .site {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         margin: 10px;
-
         color: #e0e0e0;
 
-        & span{
+        & span {
             color: #fff;
         }
     }
+
+    /* Estilos para dispositivos móveis */
+    @media (max-width: 768px) {
+        .foot {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            gap: 30px;
+
+            padding: 10px;
+
+        }
+
+        .container{
+            display: none;
+        }
+
+        .site{
+            gap: 20px;
+        }
+
+    }
+
 </style>
+

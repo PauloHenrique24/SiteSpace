@@ -1,15 +1,3 @@
-<script setup>
-  import axios from "axios";
-
-  axios.get('http://localhost:8000/api/cursos', {
-    headers: {
-      Accept: 'application/json'
-    }
-  })
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
-</script>
-
 <template>
   <div id="app">
     <transition name="zoom" mode="out-in">
