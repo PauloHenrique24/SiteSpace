@@ -6,11 +6,17 @@ export default async function routes(to, from, next){
         if(auth.token && auth.user){
     
           const isAuthenticated = await auth.checkToken(auth.token);
-          
-          console.log(isAuthenticated);
     
           if(isAuthenticated){
-            next();
+            if(to.meta?.admin){
+              if(auth.isAdmin){
+                next();
+              }
+              
+              next({name: 'home'});
+            }else{
+              next();
+            }
           }else{
             next({name: 'home'});
           }

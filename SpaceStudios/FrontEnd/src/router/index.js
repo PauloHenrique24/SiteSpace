@@ -20,7 +20,8 @@ const routes = [
     component: Dashboard,
     name: 'Dashboard',
     meta: {
-      auth: true
+      auth: true,
+      admin: true
     }
   },
 ]
