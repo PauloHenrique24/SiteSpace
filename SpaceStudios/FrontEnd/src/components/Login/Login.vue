@@ -18,11 +18,11 @@
                     <img src="../../assets/img/Icones/google.png" alt="Google">
                 </div>
 
-                <p class="voltar"><a href="/">Home</a></p>
+                <p class="voltar"><a href="/"></a></p>
 
                 <div class="login">
                     <p class="signUp"><a href="/register">Register</a></p>
-                    <p class="signUp"><a href="/dashboard">Sign Up</a></p>
+                    <p class="signUp"><a href="/">Home</a></p>
                 </div>
             </div>
         </div>

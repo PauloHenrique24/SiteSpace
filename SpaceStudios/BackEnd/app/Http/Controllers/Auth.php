@@ -27,6 +27,7 @@ class Auth extends Controller
             'user' => [
                 'firstName' => $user->firstName,
                 'lastName' => $user->lastName,
+                'email' => $user->email,
                 'admin' => $user->administrador,
             ]
         ]);
@@ -34,5 +35,9 @@ class Auth extends Controller
 
     public function verify(){
         return Jwt::validate();
+    }
+
+    public function admins(){
+        return User::where('administrador');
     }
 }

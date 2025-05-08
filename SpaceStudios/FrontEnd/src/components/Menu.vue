@@ -18,10 +18,8 @@
                 <li class="btn-menu" @click="closeMenu"><a href=""> Em Breve </a></li>
                 <li v-if="auth.isAuthenticated && auth.isAdmin" class="btn-menu" @click="closeMenu"><a href="/dashboard"> DashBoard </a></li>
                 <li class="btn-menu" @click="closeMenu"><a href="/jogos"> Jogos </a></li>
-                <li v-if="auth.isAuthenticated">Usúario Logado:<p v-if="auth.isAdmin"> Administrador</p> {{ auth.fullName }}</li>
-                <li v-if="!auth.isAuthenticated" class="sign" @click="closeMenu"><a href="/login"> Login </a></li>
-                <li v-else class="sign" @click="logout"><a href=""> Logout </a></li>
-
+                <li v-if="!auth.isAuthenticated" class="sign in" @click="closeMenu"><a href="/login"> Sign In </a></li>
+                <li v-else class="sign out" @click="logout"><a href=""> Sign Out </a></li>
             </ul>
         </div>
     </div>
@@ -167,16 +165,29 @@ export default {
     align-items: center;
 }
 
-.sign a {
-    color: #fff;
+.in a{
     background-color: #2273cf;
+    color: #fff;
     border-radius: 10px;
     font-size: 1.1rem;
     margin-left: 10px;
 }
 
-.sign a:hover {
+.out a{
+    background-color: #c91323;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.in a:hover {
     color: #2273cf;
+    background-color: #fff;
+}
+
+.out a:hover {
+    color: #c91323;
     background-color: #fff;
 }
 

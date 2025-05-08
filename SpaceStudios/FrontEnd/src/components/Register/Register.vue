@@ -3,11 +3,11 @@
         <div class="bg"></div>
         <div class="content">
             <h2 class="title">Register</h2>
-            <form class="form">
-                <input type="text" placeholder="username">
-                <input type="email" placeholder="email">
-                <input type="password" placeholder="password">
-                <input type="password" placeholder="confirm password">
+            <form class="form" @submit.prevent="register">
+                <input type="text" placeholder="First name" v-model="user.firstName">
+                <input type="text" placeholder="Last name" v-model="user.lastName">
+                <input type="email" placeholder="email" v-model="user.email">
+                <input type="password" placeholder="password" v-model="user.password">
 
                 <button type="submit">Register</button>
             </form>
@@ -26,10 +26,26 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
+    import http from '@/services/http.js';
+
+    const user = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    }
+
+    async function register(){
+        try {
+            const {data} = await http.post('/register',user);
+            console.log(data);
+            window.location = '/login';
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 </script>
 <style scoped>
     .container{

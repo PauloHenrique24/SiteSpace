@@ -35,6 +35,13 @@ export const useAuth = defineStore('auth', () => {
         }
     })
 
+    const FirstName = computed(() => user.value.firstName);
+    const LastName = computed(() => user.value.lastName);
+
+    const Email = computed(() => {
+        return user.value.email;
+    })
+
     async function checkToken(tokenA){
         try {
             const tokenAuth = 'Bearer ' + tokenA;
@@ -67,6 +74,9 @@ export const useAuth = defineStore('auth', () => {
         isAuthenticated,
         fullName,
         clear,
-        isAdmin
+        isAdmin,
+        Email,
+        FirstName,
+        LastName,
     }
 })
